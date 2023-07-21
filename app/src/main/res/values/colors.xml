@@ -4,7 +4,7 @@
     <color name="white">#FFFFFFFF</color>
     <color name="colorPrimary">@color/primaryColor</color>
     <color name="colorPrimaryDark">@color/primaryColorDark</color>
-    <color name="colorAccent">@color/primaryColorDark</color>
+    <color name="colorAccent">@color/primaryColor</color>
 
     <color name="primaryColor">#FFE600</color>
     <color name="primaryLightColor">#FFF59C</color>
