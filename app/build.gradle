@@ -58,12 +58,12 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-
-            debug {
-                debuggable true
-                minifyEnabled false
-                //buildConfigField "String", "BASE_URL", "\"https://api.themoviedb.org/3/\""
-            }
+            buildConfigField "String", "BASE_URL", "\"https://api.mercadolibre.com/sites/MLA/\""
+        }
+        debug {
+            debuggable true
+            minifyEnabled false
+            buildConfigField "String", "BASE_URL", "\"https://api.mercadolibre.com/sites/MLA/\""
         }
     }
     compileOptions {
@@ -73,6 +73,7 @@ android {
     kotlinOptions {
         jvmTarget = JavaVersion.VERSION_17
     }
+
     buildFeatures {
         viewBinding true
     }
