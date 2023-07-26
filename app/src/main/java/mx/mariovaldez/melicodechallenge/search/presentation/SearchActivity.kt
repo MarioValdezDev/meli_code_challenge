@@ -26,7 +26,7 @@ class SearchActivity : AppCompatActivity() {
     private val onBackPressedCallback: OnBackPressedCallback =
         object : OnBackPressedCallback(true) {
             override fun handleOnBackPressed() {
-                //implement logic here
+                // implement logic here
             }
         }
 

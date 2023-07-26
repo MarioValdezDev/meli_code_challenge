@@ -12,7 +12,7 @@ import javax.inject.Inject
 internal class SearchRepository @Inject constructor(
     private val remoteDataSource: RemoteDataSource,
     private val productUIMapper: ProductUIMapper,
-    private val categoriesUIMapper: CategoriesUIMapper,
+    private val categoriesUIMapper: CategoriesUIMapper
 ) {
 
     suspend fun search(query: String): List<ProductUI> = productUIMapper.map(remoteDataSource.search(query).results)
