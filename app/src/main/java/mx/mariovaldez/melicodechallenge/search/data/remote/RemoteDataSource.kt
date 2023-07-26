@@ -6,10 +6,10 @@ import mx.mariovaldez.melicodechallenge.search.data.models.response.Product
 import javax.inject.Inject
 
 internal class RemoteDataSource @Inject constructor(
-    private val apiServices: ApiServices,
+    private val apiServices: ApiServices
 ) {
 
     suspend fun search(query: String): Product = apiServices.search(query)
 
-    suspend fun categories(): List<Categories> =apiServices.categories()
+    suspend fun categories(): List<Categories> = apiServices.categories()
 }
