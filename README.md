@@ -10,4 +10,3 @@ The application implements a [Clean Architecture](https://blog.cleancoder.com/un
 - **Independency of any external agency:** The business rules simply don't know anything at all about the outside world.
 
 The following diagram describes in depth the concrete implementation of our architecture:
-
