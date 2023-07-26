@@ -9,7 +9,6 @@ import androidx.activity.OnBackPressedCallback
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import dagger.hilt.android.AndroidEntryPoint
 import mx.mariovaldez.melicodechallenge.R
 import mx.mariovaldez.melicodechallenge.databinding.ActivitySearchBinding
@@ -27,7 +26,7 @@ class SearchActivity : AppCompatActivity() {
     private val onBackPressedCallback: OnBackPressedCallback =
         object : OnBackPressedCallback(true) {
             override fun handleOnBackPressed() {
-                showAppClosingDialog()
+                //implement logic here
             }
         }
 
@@ -88,15 +87,6 @@ class SearchActivity : AppCompatActivity() {
             )
             .addToBackStack(null)
             .commit()
-    }
-
-    private fun showAppClosingDialog() {
-        MaterialAlertDialogBuilder(this)
-            .setTitle("Warning")
-            .setMessage("Do you really want to close the app?")
-            .setPositiveButton("Yes") { _, _ -> finish() }
-            .setNegativeButton("No", null)
-            .show()
     }
 
     companion object {
