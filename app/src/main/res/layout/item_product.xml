@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/product_container"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/image_start_guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.02" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/image_end_guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.35" />
+
+        <ImageView
+            android:id="@+id/image_view"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/xxxxl_icon_size"
+            android:layout_marginTop="@dimen/s_margin"
+            android:layout_marginBottom="@dimen/s_margin"
+            android:contentDescription="Product Image"
+            android:src="@drawable/icv_logo"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/image_end_guideline"
+            app:layout_constraintStart_toStartOf="@id/image_start_guideline"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/product_name_text_view"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/xs_margin"
+            android:textSize="@dimen/default_text_size"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/image_end_guideline"
+            app:layout_constraintTop_toTopOf="@+id/image_view"
+            tools:text="Apple iPad Air (5ta generación) 10.9'' Wi-Fi 64 GB Chip M1 - Blanco estelar  " />
+
+        <TextView
+            android:id="@+id/product_price_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/xs_margin"
+            android:layout_marginTop="@dimen/xs_margin"
+            android:textSize="@dimen/xl_text_size"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/image_end_guideline"
+            app:layout_constraintTop_toBottomOf="@+id/product_name_text_view"
+            tools:text="$ 13,799" />
+
+        <TextView
+            android:id="@+id/product_discount_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/xs_margin"
+            android:textColor="@color/green_light"
+            android:textSize="@dimen/default_text_size"
+            app:layout_constraintBottom_toBottomOf="@+id/product_price_text_view"
+            app:layout_constraintStart_toEndOf="@+id/product_price_text_view"
+            app:layout_constraintTop_toTopOf="@+id/product_price_text_view"
+            tools:text="34% OFF" />
+
+        <TextView
+            android:id="@+id/product_in_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/xs_margin"
+            android:layout_marginTop="@dimen/xxs_margin"
+            android:text="@string/in"
+            android:textSize="@dimen/s_text_size"
+            app:layout_constraintStart_toEndOf="@+id/image_end_guideline"
+            app:layout_constraintTop_toBottomOf="@+id/product_price_text_view" />
+
+        <TextView
+            android:id="@+id/product_msi_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/xxs_margin"
+            android:textColor="@color/green_light"
+            android:textSize="@dimen/s_text_size"
+            app:layout_constraintBottom_toBottomOf="@+id/product_in_text_view"
+            app:layout_constraintStart_toEndOf="@+id/product_in_text_view"
+            app:layout_constraintTop_toTopOf="@+id/product_in_text_view"
+            tools:text="12x $ 1,149 MSI" />
+
+        <TextView
+            android:id="@+id/product_shipping_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/xs_margin"
+            android:layout_marginTop="@dimen/xxs_margin"
+            android:textColor="@color/green_light"
+            android:textSize="@dimen/xs_text_size"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@+id/image_end_guideline"
+            app:layout_constraintTop_toBottomOf="@+id/product_in_text_view"
+            tools:text="Envio gratis" />
+
+        <TextView
+            android:id="@+id/product_seller_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/xs_margin"
+            android:layout_marginTop="@dimen/xxs_margin"
+            android:textColor="@color/gray"
+            android:textSize="@dimen/xs_text_size"
+            app:layout_constraintStart_toEndOf="@+id/image_end_guideline"
+            app:layout_constraintTop_toBottomOf="@+id/product_shipping_text_view"
+            tools:text="Vendido por Apple" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>
