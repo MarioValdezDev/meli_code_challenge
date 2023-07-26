@@ -14,11 +14,14 @@
         android:label="@string/app_name"
         android:roundIcon="@drawable/icv_logo"
         android:supportsRtl="true"
+        android:usesCleartextTraffic="true"
         android:theme="@style/Theme.MeliCodechallenge"
         tools:targetApi="31">
+
         <activity
-            android:name=".search.SearchActivity"
-            android:exported="false" />
+            android:name=".search.presentation.SearchActivity"
+            android:windowSoftInputMode="stateVisible|adjustResize"
+            android:screenOrientation="fullSensor"/>
         <activity
             android:name=".splash.SplashActivity"
             android:exported="true"
