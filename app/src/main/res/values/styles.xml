@@ -3,6 +3,7 @@
 
     <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
         <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="fontFamily">@font/roboto_light</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
         <item name="android:textViewStyle">@style/TextViewStyle</item>
@@ -21,16 +22,16 @@
 
     <!-- Text Input Layout Styles -->
     <style name="TextInputLayoutStyle" parent="Widget.MaterialComponents.TextInputLayout.FilledBox">
-        <item name="android:textColorHint">@color/PurpleGrey40</item>
-        <item name="hintTextColor">@color/PurpleGrey40</item>
+        <item name="android:textColorHint">@color/gray</item>
+        <item name="hintTextColor">@color/gray</item>
         <item name="boxBackgroundColor">@color/white</item>
         <item name="endIconTint">@color/black</item>
         <item name="passwordToggleTint">@color/black</item>
         <item name="errorEnabled">true</item>
-        <item name="boxCornerRadiusTopStart">@dimen/xs_margin</item>
-        <item name="boxCornerRadiusTopEnd">@dimen/xs_margin</item>
-        <item name="boxCornerRadiusBottomStart">@dimen/xs_margin</item>
-        <item name="boxCornerRadiusBottomEnd">@dimen/xs_margin</item>
+        <item name="boxCornerRadiusTopStart">@dimen/s_margin</item>
+        <item name="boxCornerRadiusTopEnd">@dimen/s_margin</item>
+        <item name="boxCornerRadiusBottomStart">@dimen/s_margin</item>
+        <item name="boxCornerRadiusBottomEnd">@dimen/s_margin</item>
         <item name="boxStrokeWidth">0dp</item>
         <item name="boxStrokeWidthFocused">0dp</item>
         <item name="materialThemeOverlay">@style/TextInputEditTextThemeOverlay</item>
