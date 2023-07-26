@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/start_guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.02" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/end_guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.98" />
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/layout_toolbar_product_list" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/end_guideline"
+        app:layout_constraintStart_toStartOf="@id/start_guideline"
+        app:layout_constraintTop_toBottomOf="@id/toolbar">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/product_name_text_view"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/s_margin"
+                android:textSize="@dimen/default_text_size"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Apple iPad Air (5ta generación) 10.9'' Wi-Fi 64 GB Chip M1 - Blanco estelar  " />
+
+            <ImageView
+                android:id="@+id/image_view"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/s_margin"
+                android:contentDescription="Product Image"
+                android:src="@drawable/icv_logo"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/product_name_text_view" />
+
+            <TextView
+                android:id="@+id/product_original_price_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/xs_margin"
+                android:background="@drawable/stroking_text"
+                android:foreground="@drawable/stroking_text"
+                android:textColor="@color/PurpleGrey40"
+                android:textSize="@dimen/xl_text_size"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/image_view"
+                tools:text="@string/examItemOriginalPrice" />
+
+            <TextView
+                android:id="@+id/product_price_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/xs_margin"
+                android:textSize="@dimen/xxxl_text_size"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/product_original_price_text_view"
+                tools:text="$ 13,799" />
+
+
+            <TextView
+                android:id="@+id/product_discount_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/xs_margin"
+                android:textColor="@color/green_light"
+                android:textSize="@dimen/default_text_size"
+                app:layout_constraintBottom_toBottomOf="@+id/product_price_text_view"
+                app:layout_constraintStart_toEndOf="@+id/product_price_text_view"
+                app:layout_constraintTop_toTopOf="@+id/product_price_text_view"
+                tools:text="34% OFF" />
+
+            <TextView
+                android:id="@+id/product_in_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/xxs_margin"
+                android:text="@string/in"
+                android:textSize="@dimen/s_text_size"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/product_price_text_view" />
+
+            <TextView
+                android:id="@+id/product_msi_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/green_light"
+                android:textSize="@dimen/s_text_size"
+                app:layout_constraintBottom_toBottomOf="@+id/product_in_text_view"
+                app:layout_constraintStart_toEndOf="@+id/product_in_text_view"
+                app:layout_constraintTop_toTopOf="@+id/product_in_text_view"
+                tools:text="12x $ 1,149 MSI" />
+
+            <TextView
+                android:id="@+id/product_shipping_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/xxs_margin"
+                android:textSize="@dimen/xs_text_size"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/product_in_text_view"
+                tools:text="IVA incluido" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
