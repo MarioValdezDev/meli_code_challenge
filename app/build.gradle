@@ -26,6 +26,10 @@ buildscript {
         logging_interceptor_version = "4.10.0"
         room_version = "2.5.1"
         retrofit_version = "2.9.0"
+        test_runner_version = "1.1.0"
+        test_rules_version = "1.1.0"
+        test_expresso_core_version = "3.1.0"
+        test_expresso_contrib_version = "3.3.0"
         timber_version = "5.0.1"
     }
 }
@@ -58,12 +62,13 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-            buildConfigField "String", "BASE_URL", "\"https://api.mercadolibre.com/sites/MLA/\""
+            buildConfigField "String", "BASE_URL", "\"https://api.mercadolibre.com/sites/MLM/\""
+            signingConfig signingConfigs.debug
         }
         debug {
             debuggable true
             minifyEnabled false
-            buildConfigField "String", "BASE_URL", "\"https://api.mercadolibre.com/sites/MLA/\""
+            buildConfigField "String", "BASE_URL", "\"https://api.mercadolibre.com/sites/MLM/\""
         }
     }
     compileOptions {
@@ -86,6 +91,22 @@ android {
                 def versionCode = variant.versionCode
                 outputFileName = "${applicationId}_meli_code_challenge_${flavor}_${versionName}_V${versionCode}.apk"
             }
+    }
+
+    testOptions {
+
+        animationsDisabled = true
+
+        unitTests.all {
+            jvmArgs '-XX:MaxPermSize=256m'
+        }
+    }
+    packagingOptions {
+        resources {
+            excludes += "/META-INF/{AL2.0,LGPL2.1}"
+            merges += "META-INF/LICENSE.md"
+            merges += "META-INF/LICENSE-notice.md"
+        }
     }
 }
 
@@ -139,6 +160,7 @@ dependencies {
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$kotlin_coroutines_version"
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-play-services:$coroutines_play_services_version"
 
+    implementation 'androidx.test.ext:junit-ktx:1.1.5'
 
     // region Dependencies - Annotation Processor
     // Hilt
@@ -148,15 +170,11 @@ dependencies {
     kapt "androidx.room:room-compiler:$room_version"
     // endregion
 
-    testImplementation 'junit:junit:4.13.2'
-    androidTestImplementation 'androidx.test.ext:junit-ktx:1.1.5'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
-
     // optional - Test helpers for LiveData
     testImplementation("androidx.arch.core:core-testing:$arch_version")
 
     // optional - Test helpers for Lifecycle runtime
-    testImplementation ("androidx.lifecycle:lifecycle-runtime-testing:$lifecycle_version")
+    testImplementation("androidx.lifecycle:lifecycle-runtime-testing:$lifecycle_version")
 
     //noinspection LifecycleAnnotationProcessorWithJava8
     kapt("androidx.lifecycle:lifecycle-compiler:$lifecycle_version")
@@ -175,7 +193,12 @@ dependencies {
 
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+
+    androidTestImplementation "androidx.test.espresso:espresso-core:$test_expresso_core_version"
+    androidTestImplementation "androidx.test:runner:$test_runner_version"
+    androidTestImplementation "androidx.test:rules:$test_rules_version"
+    androidTestImplementation "androidx.test.espresso:espresso-contrib:$test_expresso_contrib_version"
+
     //end region
 
 }

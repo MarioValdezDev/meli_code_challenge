@@ -1,3 +1,15 @@
 <resources>
-    <string name="app_name">MeliCodechallenge</string>
+    <string name="app_name" translatable="false">MeliCodechallenge</string>
+
+    <string name="search" translatable="false">Search</string>
+
+    <string name="examItemOriginalPrice"><s>$ 8,444</s></string>
+    <string name="free_shipping">Envío gratis</string>
+    <string name="discount">%s % OFF</string>
+    <string name="in">en</string>
+    <string name="seller_name">Vendido por %s</string>
+    <string name="msi">%dx $%.2f MSI</string>
+    <string name="not_results">No encontramos publicaciones</string>
+    <string name="not_results_description">Revisa que la palabra esté bien escrita. También puedes probar con menos términos o más generales.</string>
+
 </resources>

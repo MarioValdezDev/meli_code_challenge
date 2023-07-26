@@ -37,10 +37,10 @@ internal object NetworkModule {
     ): OkHttpClient = OkHttpClient().newBuilder().apply {
         readTimeout(READ_TIMEOUT, TimeUnit.SECONDS)
         connectTimeout(CONNECT_TIMEOUT, TimeUnit.SECONDS)
-        check(BuildConfig.DEBUG) {
+        if (BuildConfig.DEBUG) {
             addInterceptor(
                 HttpLoggingInterceptor { message ->
-                    Timber.i(message)
+                    Timber.d(message)
                 }.apply { level = HttpLoggingInterceptor.Level.BODY }
             )
         }
